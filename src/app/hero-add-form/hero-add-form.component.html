@@ -1,0 +1,101 @@
+<!-- <form [formGroup] ="form" (ngSubmit) = "onSubmit(form.value)">
+    <fieldset class="d-grid gap-2 col-12" >
+        <legend>ADD HERO</legend>
+
+        <label for="bname">Name</label>:
+        <input type="text" id="bname" placeholder="Enter Baddie's name" formControlName="bname" required> <br>
+        
+        <label for="location">Location</label>:
+        <input type="text" id="location" placeholder="Enter location" formControlName="location" required> <br>
+
+        <label for="reportedBy">Reported by</label>:
+        <input type="text" id="reportedBy" placeholder="Enter reporter's name" formControlName="reportedBy" required> <br>
+
+        <label for="time">Reporting Time</label>:
+        <input type="datetime-local" id="time" formControlName="time" required> <br>
+
+        <label for="imageLink">Image Link</label>:
+        <input type="url" id="imageLink" placeholder="Enter image URL" formControlName="imageLink"> <br>
+
+        <label for="extraInfo">Extra Information</label>:
+        <textarea id="extraInfo" placeholder="Enter any extra information" formControlName="extraInfo"></textarea> <br>
+ -->
+
+        <!-- <input type="text" name="bname" placeholder="Name"formControlName ="bname">
+        <input type="text" name="location" placeholder="location" formControlName="location">
+        <input type="text" name="reportedBy" placeholder="Reported by " formControlName="reportedBy">
+        <input type="text" name="time" placeholder="Reporting Time" formControlName="time">
+        <input type="text" name="imageLink" placeholder="Image Link" formControlName="imageLink">
+        <input type="number" name="extraInfo" placeholder="Extra Information" formControlName="extraInfo"> -->
+
+
+
+        <!-- <input type="" name="status" placeholder="age" formControlName="status"> -->
+        
+        
+        <!-- <button class="btn btn-outline-primary" [disabled] ="!form.valid">SAVE</button>
+    </fieldset> -->
+    <!-- <span *ngIf="form.controls['name'].errors as name_error">{{ name_error | json}}</span> -->
+<!-- </form> -->
+
+
+
+
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <fieldset class="container">
+        <legend>ADD NUISANCE REPORT</legend>
+        <div class="row mb-3">
+            <label for="bname" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="bname" placeholder="Enter Baddie's name" formControlName="bname" required>
+                <span *ngIf="form.get('bname')?.hasError('minlength')"> Name must have Atleast 4 letters!</span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="location" class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="location" placeholder="Enter location" formControlName="location" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="reportedBy" class="col-sm-2 col-form-label">Reported by</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="reportedBy" placeholder="Enter reporter's name, Ex:(John 123-234-3456)" formControlName="reportedBy" required>
+                <span *ngIf="form.get('reportedBy')?.hasError('invalidReporter')">Invalid reporter format, Sample format:(Name 123-234-3456)</span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="time" class="col-sm-2 col-form-label">Reporting Time</label>
+            <div class="col-sm-10">
+                <input type="datetime-local" class="form-control" id="time" formControlName="time" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="imageLink" class="col-sm-2 col-form-label">Image Link</label>
+            <div class="col-sm-10">
+                <input type="url" class="form-control" id="imageLink" placeholder="Enter image URL" formControlName="imageLink">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="extraInfo" class="col-sm-2 col-form-label">Extra Information</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="extraInfo" placeholder="Enter any extra information" formControlName="extraInfo"></textarea>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="offset-sm-2 col-sm-10">
+                <button class="btn btn-outline-primary" [disabled]="!form.valid">SAVE</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+

@@ -1,0 +1,17 @@
+<table class="table table-striped table-hover">
+    <thead>
+        <th>Location</th>
+        <th>Baddie's Name</th>
+        <th>Time Reported</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+
+    </thead>
+    <tbody>
+        <!-- Listening for the Ondelete event  -->
+        <tr app-hero *ngFor="let h of hero" [hero]="h" (delete)="onHeroDelete($event)"></tr>
+    </tbody>
+</table>
+<a class="btn btn-primary" routerLink="/hero/add">ADD NUISANCE REPORT</a>
+<!-- <app-hero-add-form></app-hero-add-form> -->

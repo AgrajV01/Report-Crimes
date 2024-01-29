@@ -1,0 +1,22 @@
+<!-- <div *ngIf="hero">
+    <img [src]="hero.imageLink" style="width: 200px; height: auto;" alt="Image of {{ hero.bname }}" />
+    <p><strong>Baddie's Name:</strong> {{ hero.bname }}</p>
+    <p><strong>Location:</strong> {{ hero.location }}</p>
+    <p><strong>Reported by:</strong> {{ hero.reportedBy }}</p>
+    <p><strong>Time:</strong> {{ hero.time | date }}</p>
+    <p><strong>Status:</strong>{{hero.status}}</p>
+    <p><strong>Extra Information:</strong> <br> {{ hero.extraInfo }}</p>
+</div> -->
+<div *ngIf="hero" class="hero-container">
+    <img [src]="hero.imageLink" class="hero-image" alt="Image of {{ hero.bname }}" />
+    <div class="hero-details">
+        <p class="detail"><strong>Baddie's Name:</strong> {{ hero.bname }}</p>
+        <p class="detail"><strong>Location:</strong> {{ hero.location }}</p>
+        <p class="detail"><strong>Reported by:</strong> {{ hero.reportedBy }}</p>
+        <p class="detail"><strong>Time:</strong> {{ hero.time | date }}</p>
+        <p class="detail"><strong>Status:</strong> {{ hero.status }}</p>
+        <p class="detail"><strong>Extra Information:</strong> <br> {{ hero.extraInfo }}</p>
+    </div>
+</div>
+
+  
